@@ -1,0 +1,306 @@
+
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>11월 고객 DM 템플릿</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 상단 헤더 -->
+    <header>
+        <h1>11월 고객 DM 템플릿</h1>
+        <p>필요한 정보만 입력하고 완성된 이미지를 저장하세요.</p>
+    </header>
+
+    <!-- 전체 레이아웃 -->
+    <main class="layout">
+
+        <!-- DM 정보 수정 패널 -->
+        <section class="panel">
+
+            <h2>DM 정보 수정</h2>
+
+            <!-- 배경 선택 -->
+            <div class="field">
+                <label>배경 선택</label>
+
+                <div class="choices">
+                    <label>
+                        <input type="radio" name="gender" value="woman" checked>
+                        여성
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="man">
+                        남성
+                    </label>
+                </div>
+            </div>
+
+            <!-- 고객명 -->
+            <div class="field">
+                <label for="customer">고객명</label>
+                <input id="customer" value="OOO" maxlength="20">
+            </div>
+
+            <!-- 설계사명 -->
+            <div class="field">
+                <label for="agent">설계사명</label>
+                <input id="agent" value="김인카" maxlength="20">
+            </div>
+
+            <!-- 전화번호 -->
+            <div class="field">
+                <label for="phone">전화번호</label>
+                <input id="phone" value="010.000.0000" maxlength="24">
+            </div>
+
+            <!-- 모바일 미리보기 이동 -->
+            <button
+                type="button"
+                class="mobile-preview-link"
+                id="back-to-preview"
+            >
+                ↑ 미리보기 다시 보기
+            </button>
+
+            <!-- 다운로드 버튼 -->
+            <button id="save">
+                이미지(PNG) 다운로드
+            </button>
+
+            <a
+                class="download"
+                id="ppt"
+                href="NovemberDM.zip"
+                download
+            >
+                전체 문구 수정용 PPT 다운로드
+            </a>
+
+            <!-- 상태 및 안내 문구 -->
+            <p id="status" class="hint" role="status"></p>
+
+            <p class="hint">
+                입력한 개인정보는 서버에 저장하지 않습니다.
+            </p>
+
+        </section>
+
+
+        <!-- 실시간 미리보기 -->
+        <section class="preview">
+
+            <h2>실시간 미리보기</h2>
+
+            <div class="canvaswrap">
+                <div id="viewport">
+
+                    <!-- 실제 DM 디자인 영역 -->
+                    <div
+                        id="dm"
+                        class="dm"
+                        aria-label="11월 고객 DM 미리보기"
+                    >
+
+                        <!-- 배경 이미지 -->
+                        <img
+                            class="dm-bg"
+                            src="images/background_woman.jpg"
+                            alt=""
+                        >
+
+                        <!-- November 이미지 -->
+                        <img
+                            class="november"
+                            src="images/November.png"
+                            alt="November"
+                        >
+
+                        <!-- 메인 타이틀 -->
+                        <div class="dm-text autumn">
+                            가을로 물드는 시간,
+                        </div>
+
+                        <div
+                            class="dm-text recipient"
+                            id="recipient"
+                        >
+                            OOO 고객님께
+                        </div>
+
+
+                        <!-- 인트로 문구 -->
+                        <div class="intro">
+
+                            <div class="intro-line">
+                                어느새 나무들이 붉고 노랗게 물드는 11월입니다.
+                            </div>
+
+                            <div class="intro-line">
+                                단풍은 낮이 짧아지고 기온이 내려가면서
+                            </div>
+
+                            <div class="intro-line">
+                                조금씩 색을 바꾼다고 합니다. 그런데
+                            </div>
+
+                            <div class="intro-line">
+                                계절의 변화에 반응하는 건 나무뿐만이 아니랍니다.
+                            </div>
+
+                        </div>
+
+
+                        <!-- 정보 카드 영역 -->
+                        <div class="cards">
+
+                            <!-- 카드 1 -->
+                            <div class="dm-card">
+
+                                <img src="images/icon1.png" alt="">
+
+                                <div class="card-copy">
+
+                                    <div class="card-title">
+                                        가을에는 낮이 얼마나 짧아질까요?
+                                    </div>
+
+                                    <div class="card-detail">
+                                        9월 초부터 11월 말까지 약 3시간 15분 줄어요
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- 카드 2 -->
+                            <div class="dm-card">
+
+                                <img src="images/icon2.png" alt="">
+
+                                <div class="card-copy">
+
+                                    <div class="card-title">
+                                        우리 몸에는 어떤 변화가 생길까요?
+                                    </div>
+
+                                    <div class="card-detail">
+                                        햇빛 변화로 졸음이나 무기력함을 느낄 수 있어요
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- 카드 3 -->
+                            <div class="dm-card">
+
+                                <img src="images/icon3.png" alt="">
+
+                                <div class="card-copy">
+
+                                    <div class="card-title">
+                                        아침 햇살로 하루를 시작해 보세요
+                                    </div>
+
+                                    <div class="card-detail">
+                                        생체시계를 맞춰 수면 리듬을 유지하도록 도와줘요
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- 마무리 인사말 -->
+                        <div class="closing">
+
+                            <div>
+                                차가워진 바람에 가을이 깊어갑니다.
+                            </div>
+
+                            <div id="closing-name">
+                                OOO님의 하루하루에 따스함과 평안함이
+                            </div>
+
+                            <div>
+                                머물기 바랍니다. 늘 건강하세요.
+                            </div>
+
+                        </div>
+
+
+                        <!-- 설계사 정보 -->
+                        <div
+                            class="dm-text agent"
+                            id="agent-text"
+                        >
+                            김인카
+                        </div>
+
+                        <img
+                            class="fa"
+                            src="images/fa.png"
+                            alt="FA"
+                        >
+
+                        <div
+                            class="dm-text phone"
+                            id="phone-text"
+                        >
+                            010.000.0000
+                        </div>
+
+
+                        <!-- 하단 로고 -->
+                        <img
+                            class="incar-logo"
+                            src="images/incarLogo.png"
+                            alt="인카금융서비스"
+                        >
+
+                        <img
+                            class="kosdaq-logo"
+                            src="images/kosdaqLogo.png"
+                            alt="KOSDAQ"
+                        >
+
+                    </div>
+                    <!-- DM 디자인 영역 끝 -->
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- 하단 푸터 -->
+    <footer>
+        인카금융서비스 고객 DM · 11월
+    </footer>
+
+
+    <!-- 로컬 이미지 데이터 -->
+    <script>
+        if (location.protocol === 'file:') {
+            document.write('<script src="local-images.js"><\/script>');
+        }
+    </script>
+
+    <!-- 메인 JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+</html>

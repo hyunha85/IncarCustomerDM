@@ -1,0 +1,412 @@
+@font-face {
+    font-family:buri;
+    src:url('font/AritaBuriKR-Bold.ttf')
+}
+
+@font-face {
+    font-family:dotum;
+    src:url('font/AritaDotumKR-Medium.ttf')
+}
+
+* {
+    box-sizing:border-box
+}
+
+body {
+    margin:0;
+    background:#f3f5f9;
+    color:#15224b;
+    font-family:system-ui,'Malgun Gothic',sans-serif
+}
+
+header {
+    background:#fff;
+    border-bottom:1px solid #e2e6ee;
+    padding:20px max(24px,calc((100vw - 1120px)/2))
+}
+
+h1 {
+    font-size:22px;
+    margin:0 0 5px
+}
+
+header p {
+    margin:0;
+    color:#66718b;
+    font-size:13px
+}
+
+.layout {
+    max-width:1120px;
+    margin:28px auto;
+    display:grid;
+    grid-template-columns:340px minmax(0,1fr);
+    gap:28px;
+    padding:0 20px
+}
+
+.panel,.preview {
+    background:#fff;
+    border:1px solid #e4e8ef;
+    border-radius:16px;
+    padding:24px;
+    box-shadow:0 8px 28px #1c2b5008
+}
+
+.panel {
+    height:max-content;
+    position:sticky;
+    top:18px
+}
+
+h2 {
+    font-size:17px;
+    margin:0 0 20px
+}
+
+.field {
+    margin:0 0 17px
+}
+
+label {
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:8px
+}
+
+input {
+    width:100%;
+    padding:12px;
+    border:1px solid #cbd3e2;
+    border-radius:9px;
+    font-size:15px
+}
+
+.choices {
+    display:flex;
+    gap:10px
+}
+
+.choices label {
+    flex:1;
+    text-align:center;
+    border:1px solid #cbd3e2;
+    border-radius:9px;
+    padding:12px;
+    cursor:pointer
+}
+
+.choices label:has(input:checked) {
+    border-color:#2554e3;
+    background:#eff3ff;
+    color:#2554e3
+}
+
+.choices input {
+    width:auto;
+    margin-right:5px
+}
+
+button,.download {
+    width:100%;
+    display:block;
+    text-align:center;
+    padding:13px;
+    border:0;
+    border-radius:10px;
+    background:#2554e3;
+    color:#fff;
+    font-weight:700;
+    font-size:14px;
+    cursor:pointer;
+    text-decoration:none;
+    margin-top:10px
+}
+
+.download {
+    background:#eff3ff;
+    color:#2346a3
+}
+
+.hint {
+    font-size:12px;
+    line-height:1.65;
+    color:#66718b;
+    margin:16px 0 0
+}
+
+.preview {
+    text-align:center
+}
+
+.preview h2 {
+    text-align:left
+}
+
+.canvaswrap {
+    max-width:460px;
+    margin:auto
+}
+
+#viewport {
+    position:relative;
+    width:100%;
+    overflow:hidden
+}
+
+.dm {
+    width:800px;
+    height:1680px;
+    position:absolute;
+    top:0;
+    left:0;
+    transform-origin:top left;
+    overflow:hidden;
+    background:#fff;
+    border:12px solid #111b5e;
+    color:#111b5e;
+    font-family:dotum;
+    box-sizing:border-box;
+    box-shadow:none
+}
+
+.dm-bg {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:fill
+}
+
+.dm img {
+    display:block
+}
+
+.dm-text {
+    position:absolute;
+    white-space:nowrap
+}
+
+.november {
+    position:absolute;
+    left:50%;
+    top:132px;
+    width:135px;
+    height:27px;
+    transform:translateX(-50%)
+}
+
+.autumn {
+    left:0;
+    top:180px;
+    width:100%;
+    font:51px buri;
+    letter-spacing: -2px;
+    color:#f3530c;
+    text-align:center
+}
+
+.recipient {
+    left:0;
+    top:243px;
+    width:100%;
+    font:51px buri;
+    letter-spacing: -2px;
+    text-align:center
+}
+
+.intro {
+    position:absolute;
+    top:342px;
+    left:61px;
+    width:654px
+}
+
+.intro-line {
+    height:68px;
+    border-bottom:1.4px solid #b9bdd1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font:29px dotum;
+    letter-spacing:-1px;
+    white-space:nowrap
+}
+
+.cards {
+    position:absolute;
+    top:673px;
+    left:50px;
+    width:676px;
+    display:flex;
+    flex-direction:column;
+    gap:21px
+}
+
+.dm-card {
+    height:128px;
+    border-radius:25px;
+    background:#fff;
+    box-shadow:0 2px 8px #00000012;
+    display:flex;
+    align-items:center;
+    padding:0 22px;
+    gap:16px
+}
+
+.dm-card img {
+    width:84px;
+    height:84px;
+    object-fit:contain;
+    flex:none
+}
+
+.card-copy {
+    flex:1;
+    text-align:left;
+    white-space:nowrap
+}
+
+.card-title {
+    font:27px dotum;
+    font-weight:600;
+    color:#f3530c;
+    margin-bottom:12px
+}
+
+.card-detail {
+    font:26px dotum;
+    color:#111b5e;
+    word-spacing: -1px;
+}
+
+.closing {
+    position:absolute;
+    top:1156px;
+    right:66px;
+    text-align:right;
+    font:29px/44px dotum;
+    white-space:nowrap
+}
+
+.agent {
+    right:63px;
+    top:1324px;
+    font:58px buri
+}
+
+.fa {
+    position:absolute;
+    left:491px;
+    top:1393px;
+    width:220px;
+    height:28px
+}
+
+.phone {
+    right:66px;
+    top:1447px;
+    font:33px dotum;
+    font-weight: 600;
+}
+
+.incar-logo {
+    position:absolute;
+    left:363px;
+    top:1542px;
+    width:274px;
+    height:48px
+}
+
+.kosdaq-logo {
+    position:absolute;
+    left:641px;
+    top:1554px;
+    width:79px;
+    height:31px
+}
+
+footer {
+    text-align:center;
+    color:#798398;
+    font-size:12px;
+    padding:0 20px 30px
+}
+
+@media(max-width:800px) {
+    .layout {
+        grid-template-columns:1fr
+    }
+
+    .panel {
+        position:static
+    }
+
+    .preview {
+        padding:16px
+    }
+
+    .canvaswrap {
+        max-width:420px
+    }
+
+}
+
+/* DM 요소는 F12에서 개별 선택 가능. 위치는 left/top/right, 글자 크기는 font 수정 */
+.mobile-preview-link {
+    display: flex;
+}
+
+/* 모바일: 미리보기 → 정보 수정 순서 (PC 레이아웃은 유지) */
+@media (max-width: 800px) {
+    .layout {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin: 16px auto;
+        padding: 0 14px;
+    }
+
+    .preview {
+        order: 1;
+        padding: 16px;
+    }
+
+    .panel {
+        order: 2;
+        padding: 20px;
+    }
+
+    .canvaswrap {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .preview h2 {
+        margin-bottom: 14px;
+    }
+
+}
+
+.mobile-preview-link {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 0 12px;
+    padding: 11px 14px;
+    border: 1px solid #cbd3e2;
+    border-radius: 10px;
+    background: #fff;
+    color: #2346a3;
+    font: 700 13px system-ui,'Malgun Gothic',sans-serif;
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+}
