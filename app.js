@@ -23,6 +23,7 @@ function drawElement(ctx,el){const cs=getComputedStyle(el);if(cs.display==='none
  if(el.tagName==='IMG'){const filename=decodeURIComponent(el.getAttribute('src').split('/').pop());const im=assets[filename];if(im)ctx.drawImage(im,x,y,w,h);return}
  if(el!==stage){if(cs.backgroundColor!=='rgba(0, 0, 0, 0)'&&cs.backgroundColor!=='transparent'){ctx.fillStyle=cs.backgroundColor;const r=parseFloat(cs.borderTopLeftRadius)||0;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill()}
   if(parseFloat(cs.borderTopWidth)>0&&cs.borderTopStyle!=='none'){ctx.strokeStyle=cs.borderTopColor;ctx.lineWidth=parseFloat(cs.borderTopWidth);ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+w,y);ctx.stroke()}
+  if(parseFloat(cs.borderBottomWidth)>0&&cs.borderBottomStyle!=='none'){const bw=parseFloat(cs.borderBottomWidth);ctx.strokeStyle=cs.borderBottomColor;ctx.lineWidth=bw;ctx.beginPath();ctx.moveTo(x,y+h-bw/2);ctx.lineTo(x+w,y+h-bw/2);ctx.stroke()}
   if(!el.children.length)drawText(ctx,el,x,y,w,h)}
  for(const child of el.children)drawElement(ctx,child)}
 function renderPNG(){const canvas=document.createElement('canvas');canvas.width=800;canvas.height=1680;const ctx=canvas.getContext('2d');const cs=getComputedStyle(stage);ctx.fillStyle=cs.backgroundColor;ctx.fillRect(0,0,800,1680);
